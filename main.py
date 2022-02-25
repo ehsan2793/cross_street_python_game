@@ -26,7 +26,12 @@ while game_is_on:
 
     for car in cars.all_cars:
         if car.distance(player) < 20:
-            game_is_on =False
+            game_is_on = False
+
+    if player.is_at_finish_line():
+        player.start_at_beginning()
+        cars.speed_up()
+
 
     # player.move_up()
     # player.move_left()
