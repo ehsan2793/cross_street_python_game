@@ -2,6 +2,8 @@ import time
 from turtle import Screen
 from player import Player
 from cars import Cars
+from scoreBoard import ScoreBoard
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
@@ -10,7 +12,7 @@ screen.bgcolor('black')
 player = Player()
 cars = Cars()
 
-
+score = ScoreBoard()
 screen.listen()
 screen.onkey(player.move_left, 'a')
 screen.onkey(player.move_right, 'd')
@@ -27,13 +29,11 @@ while game_is_on:
     for car in cars.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
+            score.game_over()
 
     if player.is_at_finish_line():
         player.start_at_beginning()
         cars.speed_up()
-
-
-    # player.move_up()
-    # player.move_left()
+        score.add_score()
 
 screen.exitonclick()

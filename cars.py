@@ -29,6 +29,3 @@ class Cars:
 
     def speed_up(self):
         self.moving_speed += MOVE_INCREMENT
-
-
-
