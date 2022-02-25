@@ -23,6 +23,11 @@ while game_is_on:
     screen.update()
     cars.create_new_car()
     cars.move_cars()
+
+    for car in cars.all_cars:
+        if car.distance(player) < 20:
+            game_is_on =False
+
     # player.move_up()
     # player.move_left()
 
