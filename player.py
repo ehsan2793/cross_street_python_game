@@ -8,4 +8,16 @@ FINISH_LINE_Y = 280
 class Player(Turtle):
     def __init__(self):
         super().__init__()
-        pass
+        self.penup()
+        self.tilt(90)
+        self.color('lightblue')
+        self.shape('turtle')
+        self.setposition(STARTING_POSITION)
+
+    def move_up(self):
+        print(self.onscreenclick())
+        y = self.ycor() + MOVE_DISTANCE
+        self.sety(y)
+    def move_left(self):
+        x = self.xcor() - MOVE_DISTANCE
+        self.setx(x)
