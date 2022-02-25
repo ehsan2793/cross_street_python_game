@@ -15,9 +15,17 @@ class Player(Turtle):
         self.setposition(STARTING_POSITION)
 
     def move_up(self):
-        print(self.onscreenclick())
         y = self.ycor() + MOVE_DISTANCE
         self.sety(y)
+
+    def move_down(self):
+        y = self.ycor() - MOVE_DISTANCE
+        self.sety(y)
+
     def move_left(self):
         x = self.xcor() - MOVE_DISTANCE
+        self.setx(x)
+
+    def move_right(self):
+        x = self.xcor() + MOVE_DISTANCE
         self.setx(x)
